@@ -13,7 +13,7 @@ import { getRegion } from "./api/index.js";
 import { handleGetRegion } from "./utils/region.js";
 
 /**
- * MCP标准错误类
+ *
  */
 class McpError extends Error {
     public code: number;
@@ -26,7 +26,6 @@ class McpError extends Error {
         this.data = data;
     }
 
-    // 预定义的错误类型
     static invalidParams(message: string, data?: any) {
         return new McpError(message, -32602, data);
     }
@@ -58,7 +57,6 @@ const server = new McpServer({
  * @returns Processing result
  */
 async function handleStampRequest(prompt: string, language: string) {
-    // 如果language不是日语，返回错误
     if (language !== 'ja') {
         throw McpError.invalidParams(MESSAGES.language_not_supported, {
             type: 'LANGUAGE_NOT_SUPPORTED',
@@ -113,12 +111,10 @@ async function handleStampRequest(prompt: string, language: string) {
     } catch (error) {
         console.error(error);
         
-        // 如果已经是MCP错误，直接重新抛出
         if (error instanceof McpError) {
             throw error;
         }
         
-        // 创建标准的MCP内部错误
         throw McpError.internalError(
             MESSAGES.common_error,
             {

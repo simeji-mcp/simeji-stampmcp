@@ -10,7 +10,6 @@ export const getStampList = (params: string | StampRequestParams) => {
     });
 };
 
-// 获取ip地区的代码
 export const getRegion = () => {
     return request<RegionResponse>({
         url: '/mcp/tool/loca',

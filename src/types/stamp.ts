@@ -42,7 +42,6 @@ export interface StampResponse {
   };
 }
 
-// 地区信息接口类型定义
 export interface RegionData {
   country: string;
 }
