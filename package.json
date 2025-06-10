@@ -1,0 +1,32 @@
+{
+  "name": "simeji-stampmcp",
+  "version": "1.0.0",
+  "description": "StampMCP-Simeji is a service that Retrieve and return multiple emoticon/sticker images based on text meaning.Creates 1-20 varied images related to the input text.Images are automatically saved to a local folder and the folder opens automatically for easy access.",
+  "type": "module",
+  "bin": {
+    "simeji-stampmcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec \"npm run build:offline && npx @modelcontextprotocol/inspector node dist/index.js\"",
+    "build:offline": "cross-env NODE_ENV=local tsc",
+    "build:production": "cross-env NODE_ENV=production tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.4",
+    "axios": "^1.6.0",
+    "fs-extra": "^11.2.0",
+    "js-base64": "^3.7.7",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.25.12"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.15.21",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
+  }
+}

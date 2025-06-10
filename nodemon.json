@@ -1,0 +1,11 @@
+{
+  "watch": ["src"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "tsc && node dist/index.js | npx @modelcontextprotocol/inspector",
+  "env": {
+    "STAMP_API_KEY": "Ki7Ly2I5rwbLeTFyWCcBGpEJOYDD8gdk",
+    "NODE_ENV": "local",
+    "DEBUG_LOG": "true"
+  }
+} 
