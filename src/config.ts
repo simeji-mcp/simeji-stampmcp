@@ -21,8 +21,8 @@ export const NEED_PASTE = parseInt(process.env.NEED_PASTE || '0') as 0 | 1;
 /**
  * Application information
  */
-export const APP_NAME = '@fex/simeji-stampmcp';
-export const APP_VERSION = '1.0.7';
+export const APP_NAME = 'StampMCP-Simeji';
+export const APP_VERSION = '1.0.10';
 
 /**
  * Tool configuration

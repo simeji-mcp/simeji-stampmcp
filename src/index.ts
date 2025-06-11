@@ -12,9 +12,6 @@ import { log, logCodes } from "./utils/log.js";
 import { getRegion } from "./api/index.js";
 import { handleGetRegion } from "./utils/region.js";
 
-/**
- *
- */
 class McpError extends Error {
     public code: number;
     public data?: any;
